@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+	RUN apt-get update
+	RUN apt-get install -y clang
+	WORKDIR /root/myproject
+	COPY ./main.cpp .
+	RUN clang++ -std=c++11 -o myapp main.cpp
+	CMD ["./myapp"]
+

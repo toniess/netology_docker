@@ -1,0 +1,6 @@
+FROM gcc:latest
+	WORKDIR /root/myproject
+	COPY ./main.cpp .
+	RUN g++ -std=c++11 -o myapp main.cpp
+	CMD ["./myapp"]
+
